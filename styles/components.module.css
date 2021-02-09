@@ -1,0 +1,201 @@
+.button {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--button-accent-1);
+  border: 2px solid var(--button-border);
+  border-radius: 35px;
+  color: var(--secondary-color);
+  font-weight: 900;
+  padding: 0.9rem 5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--button-accent-2);
+  color: var(--primary-color);
+}
+
+.wrapper {
+  padding: 0;
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(224, 224, 224);
+  border-radius: 35px;
+  color: var(--primary-color);
+  position: relative;
+  margin: 0 8%;
+}
+
+.card span {
+  position: absolute;
+  right: 25px;
+}
+
+.card div {
+  padding: 25px;
+}
+
+.card img {
+  width: 100%;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+.card h3 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer p {
+  margin: 0;
+  font-weight: 900;
+}
+
+.divider {
+  order: 1;
+  height: 150px;
+  width: 1px;
+  background-color: var(--primary-color);
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.phone {
+  order: 2;
+}
+.message {
+  margin-top: 1.025rem;
+  order: 3;
+}
+.message p,
+.phone a {
+  font-size: 36px;
+}
+
+.message small,
+.phone small {
+  display: block;
+  text-align: center;
+}
+
+.brandInfo {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.brandInfo ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.brandInfo ul li {
+  margin-right: 20px;
+}
+
+.mask {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  background: var(--primary-color);
+  width: 280px;
+  height: 180px;
+  transform-origin: bottom;
+  animation-fill-mode: forwards !important;
+  animation: fill-in 2s ease-in-out;
+}
+
+.lower-mask {
+  display: block;
+  position: absolute;
+  z-index: -2;
+  background: lightgray;
+  height: 180px;
+  width: 280px;
+}
+
+@keyframes fill-in {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .card {
+    flex-direction: row;
+    margin: 0 20%;
+  }
+  .card div {
+    padding: 2rem;
+  }
+  .card img {
+    width: 55%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 35px;
+  }
+
+  .card p {
+    font-size: 18px;
+    line-height: 2.5rem;
+  }
+
+  .contactInfo {
+    flex-direction: row;
+  }
+
+  .message {
+    order: 3;
+    margin-left: 15%;
+  }
+
+  .divider {
+    order: 2;
+  }
+
+  .phone {
+    order: 1;
+    margin-right: 15%;
+  }
+
+  .message p,
+  .phone a {
+    font-size: 48px;
+  }
+  .brandInfo {
+    margin-left: 2rem;
+  }
+}
