@@ -1,65 +1,142 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/home.module.css';
+import Drawer from '../components/drawer';
+import { InView } from 'react-intersection-observer';
+import Button from '../components/button';
+import { FaMedapps } from 'react-icons/fa';
+import Footer from '../components/footer';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
+    <main>
+      <InView>
+        {({ inView, ref }) => (
+          <>
+            <Drawer shouldTriggerBeVisible={!inView} />
+            <section ref={ref} className={styles.hero}>
+              <ul className={styles.navbar}>
+                <li>TOP</li>
+                <li>業務内容</li>
+                <li>会社概要</li>
+                <li>お問い合わせ</li>
+              </ul>
+              <div className={styles.content}>
+                <img
+                  className={styles['company-logo']}
+                  height='50px'
+                  width='80px'
+                  src='assets/baryon_logo.png'
+                  alt='baryon logo'
+                />
+                <h1>
+                  未来のために、<span className='invert'>知恵を生かそう</span>
+                </h1>
+                <h2>新規事業・海外投資のプロ</h2>
+              </div>
+              <div className={styles.carousel}>
+                <img src='assets/hero-img.jpg' alt='busy city' />
+              </div>
+            </section>
+          </>
+        )}
+      </InView>
+      <section className={styles['investment-section']}>
+        <h2 style={{ fontSize: '3.5rem', margin: 0 }}>
+          新規事業立ち上げと海外投資は
+        </h2>
+        <h3 style={{ fontSize: '2.5rem', margin: 0 }}>
+          バリオン・パートナーズへ
+        </h3>
+        <div className={styles['investment-section--content']}>
+          <img src='assets/hero-img.jpg' alt='busy road' />
+          <div>
+            <h4>
+              常に未来を見据えて、事業機会を探索し、
+              市場のニーズに応える事業立ち上げや投資 を行ってきたスキル
+            </h4>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              法人・個人を問わず、いつもお客様のために考えるパー
+              トナーとして、気軽に相談できる相手として、いつも一
+              緒に歩む併走者でありたいと思っています。
             </p>
-          </a>
+            <Button>私たちについて</Button>
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+      <section className='section'>
+        <h2
+          style={{
+            margin: 0,
+            marginBottom: '2.825rem',
+            textAlign: 'center',
+          }}
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
-}
+          新規事業を考えたい、海外に進出・投資をしたい
+          と思ったら、まずご相談ください
+        </h2>
+        <img
+          style={{ objectFit: 'cover', width: '90%' }}
+          src='assets/hero-img.jpg'
+          alt='busy road'
+        />
+      </section>
+      <section className={styles.services}>
+        <h2
+          style={{
+            margin: 0,
+            marginBottom: '2.825rem',
+            textAlign: 'center',
+          }}
+        >
+          バリオン・パートナーズのサービス内容の一例
+        </h2>
+
+        <ul>
+          <li>
+            <FaMedapps />
+            <h4>海外投資支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>貿易業務支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>海外進出支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>新規事業 立ち上げ支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>貿易業務支援 デジタル化支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>国内戸建住宅 建設助言</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>海外移住助言</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>農業支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>不動産開発支援</h4>
+          </li>
+          <li>
+            <FaMedapps />
+            <h4>ネット営業支援</h4>
+          </li>
+        </ul>
+        <Button>サービスについて</Button>
+      </section>
+      <Footer />
+    </main>
+  );
+};
+
+export default HomePage;
