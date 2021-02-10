@@ -1,0 +1,55 @@
+.contact-form {
+  width: 100%;
+}
+.contact {
+  margin: 5% 0;
+  width: 100%;
+}
+.contact tr {
+  display: flex;
+  flex-direction: column;
+}
+.contact td {
+  padding: 0.6rem;
+}
+
+.contact td input,
+.contact td textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.contact td:nth-child(1) {
+  text-align: center;
+  width: 100%;
+  font-weight: 900;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+.contact td:nth-child(2) {
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 426px) {
+  .contact {
+    margin: 5% 0;
+    margin-left: 5%;
+  }
+  .contact tr {
+    flex-direction: row;
+  }
+  .contact td:nth-child(1) {
+    text-align: left;
+    width: 30%;
+  }
+  .contact td:nth-child(2) {
+    text-align: left;
+    width: 70%;
+    border-bottom: 2px solid black;
+  }
+  .contact-form {
+    width: 70%;
+  }
+}
