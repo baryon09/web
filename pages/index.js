@@ -3,18 +3,27 @@ import { useInView } from 'react-intersection-observer';
 import Button from '../components/button';
 import { FaMedapps } from 'react-icons/fa';
 import Layout from '../components/layout';
+import Link from 'next/link';
 
 const HomePage = () => {
   const [ref, inView] = useInView({ threshold: 0 });
 
   return (
     <Layout shouldDrawerTriggerBeVisible={!inView}>
-      <section ref={ref} className={styles.hero}>
+      <section id='top' ref={ref} className={styles.hero}>
         <ul className={styles.navbar}>
-          <li>TOP</li>
-          <li>業務内容</li>
-          <li>会社概要</li>
-          <li>お問い合わせ</li>
+          <li>
+            <Link href='#top'>TOP</Link>
+          </li>
+          <li>
+            <Link href='/services'>業務内容</Link>
+          </li>
+          <li>
+            <Link href='/company-info'>会社概要</Link>
+          </li>
+          <li>
+            <Link href='/contact'>お問い合わせ</Link>
+          </li>
         </ul>
         <div className={styles.content}>
           <img

@@ -1,5 +1,7 @@
 import styles from '../styles/components.module.css';
 import { FaPhone, FaRegEnvelope } from 'react-icons/fa';
+import Link from 'next/link';
+
 const Footer = () => {
   return (
     <section className={styles.wrapper}>
@@ -43,10 +45,18 @@ const Footer = () => {
             alt='baryon logo'
           />
           <ul className='navbar'>
-            <li>TOP</li>
-            <li>業務内容</li>
-            <li>会社概要</li>
-            <li>お問い合わせ</li>
+            <li>
+              <Link href='#'>TOP</Link>
+            </li>
+            <li>
+              <Link href='/services'>業務内容</Link>
+            </li>
+            <li>
+              <Link href='/company-info'>会社概要</Link>
+            </li>
+            <li>
+              <Link href='/contact'>お問い合わせ</Link>
+            </li>
           </ul>
           <small>
             © 2021 ALL RIGHTS RESERVED. BARYON PARTNERS CORPORATION LTD
