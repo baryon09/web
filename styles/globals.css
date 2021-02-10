@@ -3,6 +3,7 @@
 :root {
   --primary-color: #203864;
   --secondary-color: #ffffff;
+  --tertiary-color: #9cb7eb;
   --button-accent-1: var(--primary-color);
   --button-accent-2: var(--secondary-color);
   --button-border: var(--primary-color);
@@ -148,6 +149,24 @@ a {
   margin-top: 50px !important;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  text-align: center;
+}
+
 @media screen and (min-width: 769px) {
   .drawer {
     width: 30%;
@@ -155,8 +174,23 @@ a {
   .drawer ul {
     padding-left: 5%;
   }
+  h1 {
+    font-size: 3.6rem;
+  }
   h2,
   .section h2 {
     font-size: 3rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  .card {
+    flex-direction: row;
+  }
+  .card-image {
+    width: 50%;
+  }
+  .card-content {
+    margin-left: 5%;
   }
 }
