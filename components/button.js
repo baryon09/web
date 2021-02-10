@@ -1,8 +1,13 @@
 import styles from '../styles/components.module.css';
 
-const Button = ({ children, onClick }) => {
+const Button = ({ children, type, formID, onClick }) => {
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button
+      form={formID}
+      type={type}
+      className={styles.button}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
