@@ -1,44 +1,38 @@
 import styles from '../styles/home.module.css';
-import Drawer from '../components/drawer';
-import { InView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 import Button from '../components/button';
 import { FaMedapps } from 'react-icons/fa';
-import Footer from '../components/footer';
+import Layout from '../components/layout';
 
 const HomePage = () => {
+  const [ref, inView] = useInView({ threshold: 0 });
+
   return (
-    <main>
-      <InView>
-        {({ inView, ref }) => (
-          <>
-            <Drawer shouldTriggerBeVisible={!inView} />
-            <section ref={ref} className={styles.hero}>
-              <ul className={styles.navbar}>
-                <li>TOP</li>
-                <li>業務内容</li>
-                <li>会社概要</li>
-                <li>お問い合わせ</li>
-              </ul>
-              <div className={styles.content}>
-                <img
-                  className={styles['company-logo']}
-                  height='50px'
-                  width='80px'
-                  src='assets/baryon_logo.png'
-                  alt='baryon logo'
-                />
-                <h1>
-                  未来のために、<span className='invert'>知恵を生かそう</span>
-                </h1>
-                <h2>新規事業・海外投資のプロ</h2>
-              </div>
-              <div className={styles.carousel}>
-                <img src='assets/hero-img.jpg' alt='busy city' />
-              </div>
-            </section>
-          </>
-        )}
-      </InView>
+    <Layout shouldDrawerTriggerBeVisible={!inView}>
+      <section ref={ref} className={styles.hero}>
+        <ul className={styles.navbar}>
+          <li>TOP</li>
+          <li>業務内容</li>
+          <li>会社概要</li>
+          <li>お問い合わせ</li>
+        </ul>
+        <div className={styles.content}>
+          <img
+            className={styles['company-logo']}
+            height='50px'
+            width='80px'
+            src='assets/baryon_logo.png'
+            alt='baryon logo'
+          />
+          <h1>
+            未来のために、<span className='invert'>知恵を生かそう</span>
+          </h1>
+          <h2>新規事業・海外投資のプロ</h2>
+        </div>
+        <div className={styles.carousel}>
+          <img src='assets/hero-img.jpg' alt='busy city' />
+        </div>
+      </section>
       <section className={styles['investment-section']}>
         <h2 style={{ fontSize: '3.5rem', margin: 0 }}>
           新規事業立ち上げと海外投資は
@@ -134,8 +128,7 @@ const HomePage = () => {
         </ul>
         <Button>サービスについて</Button>
       </section>
-      <Footer />
-    </main>
+    </Layout>
   );
 };
 
