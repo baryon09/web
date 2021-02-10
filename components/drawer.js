@@ -43,13 +43,13 @@ const Drawer = ({ shouldDrawerTriggerBeVisible }) => {
               <Link href='/'>ホーム</Link>
             </li>
             <li data-position='01'>
-              <Link href='/'>業務内容</Link>
+              <Link href='/services'>業務内容</Link>
             </li>
             <li data-position='02'>
-              <Link href='/'>会社概要</Link>
+              <Link href='/company-info'>会社概要</Link>
             </li>
             <li data-position='03'>
-              <Link href='/'>お問い合わせ</Link>
+              <Link href='/contact'>お問い合わせ</Link>
             </li>
             <li className='mt-2'>
               <Button>お問い合わせ</Button>
