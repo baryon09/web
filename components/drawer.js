@@ -23,14 +23,14 @@ const DrawerTrigger = ({ isDrawerClosed, toggleDrawer }) => {
   );
 };
 
-const Drawer = ({ shouldTriggerBeVisible }) => {
+const Drawer = ({ shouldDrawerTriggerBeVisible }) => {
   const [isDrawerClosed, setIsDrawerCloseTo] = useState(true);
 
   const toggleDrawer = () => {
     setIsDrawerCloseTo((isDrawerClosed) => !isDrawerClosed);
   };
 
-  if (shouldTriggerBeVisible) {
+  if (shouldDrawerTriggerBeVisible) {
     return (
       <>
         <DrawerTrigger
