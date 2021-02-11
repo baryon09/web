@@ -167,6 +167,10 @@ a {
   text-align: center;
 }
 
+img {
+  animation: fadeInImages 750ms ease-in-out;
+}
+
 @media screen and (min-width: 769px) {
   .drawer {
     width: 30%;
@@ -192,5 +196,17 @@ a {
   }
   .card-content {
     margin-left: 5%;
+  }
+}
+
+@keyframes fadeInImages {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
