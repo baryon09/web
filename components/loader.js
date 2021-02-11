@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from '../styles/components.module.css';
 
-const Loader = ({ children }) => {
+const Loader = () => {
   const [isLoaded, setIsLoadedTo] = useState(false);
 
   useEffect(() => {
@@ -11,18 +11,8 @@ const Loader = ({ children }) => {
     return () => clearTimeout(timeout);
   }, []);
 
-  return isLoaded ? (
-    children
-  ) : (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        width: '100%',
-      }}
-    >
+  return isLoaded ? null : (
+    <div className={styles.loader}>
       <div>
         <span className={`${styles.mask}`}></span>
         <span className={styles['lower-mask']}></span>
