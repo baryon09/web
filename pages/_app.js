@@ -3,9 +3,10 @@ import Loader from '../components/loader';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Loader>
+    <>
+      <Loader />
       <Component {...pageProps} />
-    </Loader>
+    </>
   );
 }
 
