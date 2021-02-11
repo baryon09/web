@@ -154,7 +154,7 @@
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 767px) {
   .card {
     flex-direction: row;
     margin: 0 20%;
@@ -197,5 +197,45 @@
   }
   .brandInfo {
     margin-left: 2rem;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 769px) {
+  .card {
+    flex-direction: row;
+    margin: 0 5%;
+  }
+  .card div {
+    padding: 2rem;
+  }
+  .card img {
+    width: 55%;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 35px;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.5rem;
+  }
+  .message {
+    margin-left: 5%;
+  }
+  .phone {
+    margin-right: 5%;
+  }
+  .message p,
+  .phone a {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1025px) {
+  .card {
+    margin: 0 10%;
+  }
+  .message p,
+  .phone a {
+    font-size: 36px;
   }
 }
