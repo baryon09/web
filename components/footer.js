@@ -61,8 +61,15 @@ const Footer = () => {
           <small>
             © 2021 ALL RIGHTS RESERVED. BARYON PARTNERS CORPORATION LTD
           </small>
-          <span style={{ display: 'block', marginTop: '10px' }}>
-            <strong>POWERED BY MOZARC</strong>
+          <span
+            style={{ display: 'block', marginTop: '10px', color: 'lightgray' }}
+          >
+            <strong>
+              POWERED BY{' '}
+              <span>
+                <Link href='https://mozarc.jp/'>MOZARC</Link>
+              </span>
+            </strong>
           </span>
         </div>
       </footer>
