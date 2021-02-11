@@ -41,6 +41,11 @@
   flex-wrap: wrap;
 }
 
+.left-service-list,
+.right-service-list {
+  animation: fadeIn 800ms ease-in-out;
+}
+
 .services-list li {
   width: 100%;
   margin-bottom: 10%;
@@ -60,5 +65,14 @@
   }
   .services-list li h3 {
     font-size: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
