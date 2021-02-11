@@ -5,7 +5,16 @@ import Drawer from './drawer';
 const Layout = ({ children, head, shouldDrawerTriggerBeVisible }) => {
   return (
     <>
-      <Head>{head}</Head>
+      <Head>
+        {head === undefined ? (
+          <>
+            <title>Baryon</title>
+            <meta name='description' content='lorem ipsum dolor.' />
+          </>
+        ) : (
+          head
+        )}
+      </Head>
       <main>
         <Drawer
           shouldDrawerTriggerBeVisible={
