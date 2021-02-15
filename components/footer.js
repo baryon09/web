@@ -30,10 +30,14 @@ const Footer = () => {
           </div>
           <span className={styles.divider}></span>
           <div className={styles.message}>
-            <p>
-              <FaRegEnvelope /> お問い合わせ
-            </p>
-            <small>インターネットで24時間受付</small>
+            <Link href='/contact'>
+              <>
+                <p>
+                  <FaRegEnvelope /> お問い合わせ
+                </p>
+                <small>インターネットで24時間受付</small>
+              </>
+            </Link>
           </div>
         </div>
 

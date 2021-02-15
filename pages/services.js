@@ -24,7 +24,7 @@ const ServicesPage = () => {
           <div className='card'>
             <img className='card-image' src='assets/hero-img.jpg' alt='' />
             <div className='card-content'>
-              <h3>新しい事をするにはどうすれば いいのか？</h3>
+              <h3>新しい事をするにはどうす{<br />}れば いいのか？</h3>
               <p style={{ fontSize: '1.2rem' }}>
                 当社では個人・法人を問わずに新しいことにチャレンジ
                 したくてもできない方に。伴走者として一緒に事業や投

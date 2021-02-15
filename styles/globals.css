@@ -16,6 +16,7 @@ body {
   font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -109,40 +110,64 @@ a {
   font-size: 8px;
 }
 
-.trigger #icon {
+.drawer-wrapper {
   position: fixed;
-  right: 10px;
-  top: 30px;
-  width: 100px;
-  height: 80px;
-  z-index: 90000;
-  cursor: pointer;
-  transform: translate3d(0, 0, 0);
+  right: 20px;
+  top: 20px;
+  z-index: 100000000;
 }
 
-.trigger path {
-  fill: none;
-  transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25),
-    stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
-  stroke-width: 15px;
-  stroke: var(--primary-color);
-  stroke-dashoffset: 0px;
+.hamburger .line {
+  width: 30px;
+  height: 1px;
+  background-color: var(--primary-color);
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.trigger path#top,
-.trigger path#bottom {
-  stroke-dasharray: 240px 950px;
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
-.trigger path#middle {
-  stroke-dasharray: 240px 240px;
+
+.hamburger .line:nth-child(1) {
+  animation: grow-and-shrink 1.5s ease-in-out infinite;
 }
-.cross path#top,
-.cross path#bottom {
-  stroke-dashoffset: -650px;
-  stroke-dashoffset: -650px;
+.hamburger .line:nth-child(2) {
+  animation: grow-and-shrink 1.5s ease-in-out 150ms infinite;
 }
-.cross path#middle {
-  stroke-dashoffset: -115px;
-  stroke-dasharray: 1px 220px;
+.hamburger .line:nth-child(3) {
+  animation: grow-and-shrink 1.5s ease-in-out 300ms infinite;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+#hamburger-1.is-active .line:nth-child(2) {
+  animation: none;
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1) {
+  animation: none;
+  transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3) {
+  animation: none;
+  transform: translateY(-11px) rotate(-45deg);
 }
 
 .mt-2 {

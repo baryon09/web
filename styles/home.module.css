@@ -16,6 +16,7 @@
 .content h1 {
   z-index: 1000;
   font-weight: 700;
+  width: 100vw;
   font-size: 56px;
   margin: 0;
   margin-bottom: 1rem;
@@ -25,16 +26,6 @@
   font-weight: 400;
   font-size: 24px;
   margin: 0;
-}
-
-.carousel img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin-left: -450px;
-  width: 65vw;
-  height: 90vh;
-  object-fit: cover;
 }
 
 .company-logo {
@@ -118,7 +109,43 @@
   font-size: 72px;
 }
 
+.move-cursor {
+  position: absolute;
+  right: 50%;
+  z-index: 10000;
+  bottom: 2%;
+}
+
+.move-cursor span {
+  display: block;
+  height: 100px;
+  width: 1px;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.move-cursor span::before {
+  background-color: var(--primary-color);
+  position: absolute;
+  left: -3.5px;
+  content: '';
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: block;
+  animation: move-cursor-point 1.5s ease-in-out infinite;
+}
+
 @media screen and (max-width: 769px) {
+  .move-cursor {
+    position: absolute;
+    right: 50%;
+    bottom: -3%;
+    z-index: 10000;
+  }
+  .move-cursor span {
+    height: 40px;
+  }
   .company-logo {
     margin-left: 0;
     height: 50px;
@@ -140,10 +167,6 @@
   .investment-section p {
     font-size: 0.9rem !important;
   }
-  .carousel img {
-    width: 100%;
-    object-fit: cover;
-  }
   .navbar {
     display: none;
   }
@@ -152,12 +175,7 @@
     display: flex;
     flex-direction: column-reverse;
   }
-  .carousel img {
-    height: 80vh;
-    padding: 20px 20px 0px 20px;
-    position: static;
-    margin-left: 0;
-  }
+
   .content {
     padding-top: 0;
     padding-left: 0;
@@ -201,5 +219,14 @@
   .services ul li {
     width: 35%;
     margin: 0 5%;
+  }
+}
+
+@keyframes move-cursor-point {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
   }
 }

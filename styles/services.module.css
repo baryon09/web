@@ -58,7 +58,8 @@
 
 @media screen and (min-width: 768px) {
   .services-list li {
-    width: 30%;
+    width: 21%;
+    margin-right: 10px;
   }
   .switch button {
     padding: 25px 3.5rem;

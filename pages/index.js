@@ -5,6 +5,7 @@ import { FaMedapps } from 'react-icons/fa';
 import Layout from '../components/layout';
 import Link from 'next/link';
 import FadeInWhenVisible from '../components/fadeInWhenVisible';
+import Carousel from '../components/carousel';
 
 const HomePage = () => {
   const [ref, inView] = useInView({ threshold: 0 });
@@ -40,8 +41,9 @@ const HomePage = () => {
             </h1>
             <h2>新規事業・海外投資のプロ</h2>
           </div>
-          <div className={styles.carousel}>
-            <img src='assets/hero-img.jpg' alt='busy city' />
+          <Carousel />
+          <div className={styles['move-cursor']}>
+            <span />
           </div>
         </section>
       </FadeInWhenVisible>
@@ -65,7 +67,9 @@ const HomePage = () => {
                 トナーとして、気軽に相談できる相手として、いつも一
                 緒に歩む併走者でありたいと思っています。
               </p>
-              <Button>私たちについて</Button>
+              <Link href='/company-info'>
+                <Button>私たちについて</Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -143,7 +147,9 @@ const HomePage = () => {
               <h4>ネット営業支援</h4>
             </li>
           </ul>
-          <Button>サービスについて</Button>
+          <Link href='/services'>
+            <Button>サービスについて</Button>
+          </Link>
         </section>
       </FadeInWhenVisible>
     </Layout>
